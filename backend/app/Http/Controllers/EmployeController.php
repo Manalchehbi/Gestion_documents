@@ -10,12 +10,9 @@ class EmployeController extends Controller
 {
 
 
+   
     public function index(){
-        return 'khdama';
-    }
-    public function all(){
-        $employes= Employe::all();
-        return $employes;
+        return Employe::select('id','name','email','password')->get();
     }
 
     public function store(Request $request ){
