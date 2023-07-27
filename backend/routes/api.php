@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FileController;
 use APP\Http\Controllers\FolderController;
 use App\Http\Controllers\EmployeController;
 /*
@@ -22,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 /*******************************Folders  ****************************************/
 Route::post('create_folder',[App\Http\Controllers\FolderController::class, 'store']);
 Route::get('folders',[App\Http\Controllers\FolderController::class, 'index']);
-
+Route::get('import_file',[App\Http\Controllers\FileController::class, 'store']);
 /*******************************Employes  ****************************************/
 
 Route::post('/login', [LoginController::class, 'login']);
